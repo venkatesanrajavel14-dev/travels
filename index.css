@@ -1,0 +1,64 @@
+:root {
+  font-family: 'DM Sans', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-width: 320px;
+  background: #f3ead8;
+}
+
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+.scenic-background {
+  position: fixed;
+  z-index: -1;
+  inset: -2%;
+  background:
+    linear-gradient(rgba(243, 234, 216, 0.57), rgba(243, 234, 216, 0.68)),
+    linear-gradient(0deg, rgba(33, 23, 15, 0.1), transparent 55%),
+    url('/fleet/munnar-road.jpg') center 58% / cover no-repeat;
+  background-color: #e8dcc4;
+  pointer-events: none;
+  animation: scenic-drift 36s ease-in-out infinite alternate;
+}
+
+@keyframes scenic-drift {
+  from {
+    transform: translate3d(-0.5%, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(0.5%, -0.5%, 0) scale(1.025);
+  }
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #a77d39;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
